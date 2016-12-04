@@ -87,6 +87,7 @@ namespace Automata
                 numericUpDown4.Value = temp.Pattern[2];
             }
         }
+
         /// <summary>
         /// Copies data from properties pane into the source Rule object.
         /// </summary>
