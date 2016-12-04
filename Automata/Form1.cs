@@ -18,8 +18,7 @@ namespace Automata
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _ruleList.Add(new Rule(new[] {0, 0, 0}, 0, "Rule 0"));
-            RepopulateRuleList();
+            LoadDefaultRules();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,6 +27,21 @@ namespace Automata
             _ruleCounter++;
             RepopulateRuleList();
         }
+
+        public void LoadDefaultRules()
+        {
+            _ruleList.Clear();
+            _ruleList.Add(new Rule(new[] { 1, 1, 1 }, 0, "Rule A"));
+            _ruleList.Add(new Rule(new[] { 1, 1, 0 }, 0, "Rule B"));
+            _ruleList.Add(new Rule(new[] { 1, 0, 1 }, 0, "Rule C"));
+            _ruleList.Add(new Rule(new[] { 1, 0, 0 }, 1, "Rule D"));
+            _ruleList.Add(new Rule(new[] { 0, 1, 1 }, 1, "Rule E"));
+            _ruleList.Add(new Rule(new[] { 0, 1, 0 }, 1, "Rule F"));
+            _ruleList.Add(new Rule(new[] { 0, 0, 1 }, 1, "Rule G"));
+            _ruleList.Add(new Rule(new[] { 0, 0, 0 }, 0, "Rule H"));
+            RepopulateRuleList();
+        }
+
         /// <summary>
         /// Repopulates listBox1 items to reflect the current Rule list.
         /// </summary>
@@ -112,6 +126,11 @@ namespace Automata
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             SaveRuleProperties();
+        }
+
+        private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadDefaultRules();
         }
     }
 }
