@@ -7,7 +7,7 @@ namespace Automata
     namespace Geometry
 
     {
-        public struct Vector2D
+        public class Vector2D
         {
             public bool Equals(Vector2D other)
             {
@@ -17,7 +17,8 @@ namespace Automata
             public override bool Equals(object obj)
             {
                 if (ReferenceEquals(null, obj)) return false;
-                return obj is Vector2D && Equals((Vector2D) obj);
+                var d = obj as Vector2D;
+                return d != null && Equals(d);
             }
 
             public override int GetHashCode()
@@ -56,7 +57,7 @@ namespace Automata
 
             public static bool operator ==(Vector2D a, Vector2D b)
             {
-                return (Math.Abs(a.x - b.x) <= 0) && (Math.Abs(a.y - b.y) <= 0);
+                return (a.x == b.x) && (a.y == b.y);
             }
 
             public static bool operator !=(Vector2D a, Vector2D b)

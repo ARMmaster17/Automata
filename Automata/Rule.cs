@@ -48,13 +48,26 @@ namespace Automata
             Name = ruleName;
         }
 
+        /// <summary>
+        /// Takes an nearest neighbors and checks against initialized rule pattern.
+        /// </summary>
+        /// <param name="blockLeft">Block up and to the left.</param>
+        /// <param name="blockMid">Block directly above test square.</param>
+        /// <param name="blockRight">Block up and to the right.</param>
+        /// <returns>Result of test.</returns>
         public bool Test(int blockLeft, int blockMid, int blockRight)
         {
             return _testCase[0] == blockLeft && _testCase[1] == blockMid && _testCase[2] == blockRight;
         }
 
+        /// <summary>
+        /// Result color that should be set when rule returns true.
+        /// </summary>
         public int Color { get; set; }
 
+        /// <summary>
+        /// Name of rule in GUI tool.
+        /// </summary>
         public string Name
         {
             get { return _name; }
@@ -68,6 +81,9 @@ namespace Automata
             }
         }
 
+        /// <summary>
+        /// Test pattern for check function.
+        /// </summary>
         public int[] Pattern
         {
             get { return _testCase; }

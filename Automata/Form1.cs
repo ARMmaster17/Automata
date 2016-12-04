@@ -31,7 +31,7 @@ namespace Automata
         /// <summary>
         /// Repopulates listBox1 items to reflect the current Rule list.
         /// </summary>
-        private void RepopulateRuleList()
+        public void RepopulateRuleList()
         {
             listBox1.Items.Clear();
             foreach (var rule in _ruleList)
@@ -76,7 +76,7 @@ namespace Automata
         /// <summary>
         /// Copies data from properties pane into the source Rule object.
         /// </summary>
-        private void SaveRuleProperties()
+        public void SaveRuleProperties()
         {
             if (listBox1.SelectedIndex == -1)
             {
