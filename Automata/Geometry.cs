@@ -33,7 +33,6 @@ namespace Automata
 
             public double y;
 
-
             public Vector2D(double ax, double ay)
             {
                 x = ax;

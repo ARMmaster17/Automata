@@ -82,9 +82,9 @@ namespace Automata
                 Rule temp = _ruleList[listBox1.SelectedIndex];
                 textBox1.Text = temp.Name;
                 numericUpDown1.Value = temp.Color;
-                numericUpDown2.Value = temp.Pattern[0];
-                numericUpDown3.Value = temp.Pattern[1];
-                numericUpDown4.Value = temp.Pattern[2];
+                numericUpDown2.Value = (decimal)temp.Pattern[0];
+                numericUpDown3.Value = (decimal)temp.Pattern[1];
+                numericUpDown4.Value = (decimal)temp.Pattern[2];
             }
         }
 
@@ -111,27 +111,32 @@ namespace Automata
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            SaveRuleProperties();
+            //SaveRuleProperties();
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-            SaveRuleProperties();
+            //SaveRuleProperties();
         }
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
-            SaveRuleProperties();
+            //SaveRuleProperties();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SaveRuleProperties();
+            //SaveRuleProperties();
         }
 
         private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadDefaultRules();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SaveRuleProperties();
         }
     }
 }
