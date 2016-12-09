@@ -43,9 +43,11 @@ namespace Automata
             int offset = structure.Count;
             for (int y = 0; y < structure.Count; y++)
             {
+                int xPos = offset - y;
                 for (int x = 0; x < structure[y].Size; x++)
                 {
-                    worldGraphics.FillRectangle(GetBrush(structure[y][x]), offset - x, y + 1, 1, 1);
+                    worldGraphics.FillRectangle(GetBrush(structure[y][x]), xPos, y + 1, 1, 1);
+                    xPos++;
                 }
             }
             return worldBitmap;

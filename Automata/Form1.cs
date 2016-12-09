@@ -146,7 +146,12 @@ namespace Automata
 
         public void StartSimulation(int iterations)
         {
+            ClearGraph();
+            toolStripProgressBar1.ProgressBar.Style = ProgressBarStyle.Continuous;
+            toolStripStatusLabel1.Text = "Building...";
             pictureBox1.Image = Builder.BuildWorldImage(iterations, _ruleList);
+            toolStripProgressBar1.ProgressBar.Style = ProgressBarStyle.Blocks;
+            toolStripStatusLabel1.Text = "Done";
         }
 
         public void ClearGraph()
