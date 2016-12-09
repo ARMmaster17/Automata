@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Drawing;
+using System.Drawing;
 using System.Windows.Forms;
 using Automata.Properties;
 
@@ -137,6 +137,41 @@ namespace Automata
         private void button4_Click(object sender, EventArgs e)
         {
             SaveRuleProperties();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            StartSimulation(5);
+        }
+
+        public void StartSimulation(int iterations)
+        {
+            pictureBox1.Image = Builder.BuildWorldImage(iterations, _ruleList);
+        }
+
+        public void ClearGraph()
+        {
+            pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            StartSimulation(10);
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            StartSimulation(100);
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            StartSimulation(1000);
+        }
+
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearGraph();
         }
     }
 }

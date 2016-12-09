@@ -20,7 +20,10 @@ namespace Automata.Tests
             f.Show();
             f.RepopulateRuleList();
             f.LoadDefaultRules();
+            f.StartSimulation(10);
+            f.ClearGraph();
             //f.SaveRuleProperties();
+            f.Close();
         }
     }
 }
