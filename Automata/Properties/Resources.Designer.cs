@@ -86,5 +86,14 @@ namespace Automata.Properties {
                 return ResourceManager.GetString("error3", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This function requires a minimum of 1 GB of RAM and may lock up your CPU for several minutes. Continue?.
+        /// </summary>
+        internal static string RAM_Warning {
+            get {
+                return ResourceManager.GetString("RAM_Warning", resourceCulture);
+            }
+        }
     }
 }

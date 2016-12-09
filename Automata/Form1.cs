@@ -178,5 +178,13 @@ namespace Automata
         {
             ClearGraph();
         }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(Resources.RAM_Warning, "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                StartSimulation(10000);
+            }
+        }
     }
 }

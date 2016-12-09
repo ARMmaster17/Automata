@@ -38,7 +38,9 @@ namespace Automata
 
         private static Image BuildMap(int iterations, int width, int height, List<Row> structure)
         {
-            Bitmap worldBitmap = new Bitmap(width, height);
+            //Bitmap worldBitmap = new Bitmap(width, height);
+            IntPtr p = IntPtr.Zero;
+            Bitmap worldBitmap = new Bitmap(width, height, 0, System.Drawing.Imaging.PixelFormat.Format16bppRgb555, p);
             Graphics worldGraphics = Graphics.FromImage(worldBitmap);
             int offset = structure.Count;
             for (int y = 0; y < structure.Count; y++)
