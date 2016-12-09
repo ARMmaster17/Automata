@@ -51,5 +51,10 @@ namespace Automata
             get { return index < 0 || index >= _rowData.Length ? 0 : _rowData[index]; }
             set { _rowData[index] = value; }
         }
+
+        public int Size
+        {
+            get { return _rowData.Length; }
+        }
     }
 }

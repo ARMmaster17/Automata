@@ -40,8 +40,26 @@ namespace Automata
         {
             Bitmap worldBitmap = new Bitmap(width, height);
             Graphics worldGraphics = Graphics.FromImage(worldBitmap);
-
+            int offset = structure.Count;
+            for (int y = 0; y < structure.Count; y++)
+            {
+                for (int x = 0; x < structure[y].Size; x++)
+                {
+                    worldGraphics.FillRectangle(GetBrush(structure[y][x]), offset - x, y + 1, 1, 1);
+                }
+            }
             return worldBitmap;
+        }
+
+        private static Brush GetBrush(int specifier)
+        {
+            switch (specifier)
+            {
+                case 1:
+                    return Brushes.Black;
+                default:
+                    return Brushes.White;
+            }
         }
     }
 }
